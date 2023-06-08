@@ -1,0 +1,361 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #000;
+    overflow-y: hidden;
+    font-family: birds;
+}
+@font-face{
+    src: url(fonts/birds.ttf);
+    font-family: birds;
+}
+
+#gameScene{
+    width: 1200px;
+    height: 700px;
+    background: rgba(160,205,220,1); 
+    margin: 0px auto;
+    position: relative;
+    overflow: hidden;
+    transform: scale(.9);
+}
+#introVid{
+	position:relative;
+	z-index:300;
+	display:none;
+	
+}
+.cloud1{
+    height: 62%;
+    width: 300%;
+    background: url(img/cloud1.png);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: cloud 30s infinite;
+}
+.cloud2{
+    height: 58%;
+    width: 300%;
+    background: url(img/cloud2.png);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: cloud 70s infinite alternate;
+}
+@keyframes cloud{
+    0%{
+        left: 0;
+    }
+    100%{
+        left: -200%;
+    }
+}
+#cactus{
+    width: 300%;
+    height: 20%;
+    background: url(img/cactus-bg.png);
+    position: absolute;
+    bottom: 130px;
+    left: 0;
+    animation: cloud 20s infinite alternate linear;
+}
+
+#gameMenu{
+	width:100%;
+	height:100%;
+	border:1px solid transparent;
+    background: url(img/ui.png) no-repeat 50% 10%;	
+	position:relative;
+	z-index:200;
+}
+#playBtn{
+    width: 250px;
+    height: 125px;
+    background: url(img/Play_Btn.png);
+	margin:310px auto;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#playBtn:hover{
+    transform: scale(1.1);
+}
+
+.groundMoving{
+    width: 1000%;
+    height: 28%;
+    background: url(img/ground-static.png);
+	background-size: contain;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: cloud 10s infinite alternate linear;
+}
+#gamePlay{
+	width:100%;
+	height:100%;
+	border:1px solid green;
+	z-index:200;
+}
+.ground{	
+    width: 100%;
+    height: 45%;
+    background: url(img/ground.png) no-repeat;
+	background-size: contain;
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+}
+
+
+#player{
+    width: 40px;
+    height: 38px;
+    background: url(img/red.png);
+    position: absolute;
+    bottom: 180px;
+    left: 160px;
+    animation: player 3s infinite; 
+    /* animation: move3 1.2s ease-in-out; */
+    transition: 0.4s;
+    cursor: pointer;
+    z-index: 20;
+}
+@keyframes player{
+    0%,100%{
+        transform: rotate(0deg);
+    }
+    30%,75%{
+        transform: rotate(-8deg) scale(1.2);
+    }
+    50%{
+        transform: rotate(8deg);
+    }
+}
+
+#enemyBox{
+	width:200px;
+    position: relative;
+	height:200px;
+	margin:325px 725px;
+}
+#enemy{
+    width: 41px;
+    height: 41px;
+    bottom: 0;
+    right: 32px;
+    background-image: url(./img/pig.png);
+    position: absolute;
+	transition:0.5s;
+}
+.wood{
+    width: 15px;
+    height: 60px;
+    background: url(img/wood1.png);
+    position: absolute;
+}
+.ice{
+    width: 30px;
+    height: 30px;
+    background: url(img/ice1.png);
+    position: absolute;
+}
+#w1{
+    bottom: 0;
+    right: 15px;
+    transition: 1s;
+    transform-origin: bottom;
+}
+#w2{
+    bottom: 0;
+    right: 75px;
+    transition: 1s;
+    transform-origin: bottom;
+}
+#w3{
+    transform: rotate(90deg);
+    transition: 1s;
+    bottom: 32px;
+    right: 45px;
+}
+.ice{
+    width: 32px;
+    height: 30px;
+    background-image: url(./img/ice1.png);
+    position: absolute;
+}
+#i1{
+    right: 90px;
+    bottom: 30px;
+}
+#i2{
+    right: 90px;
+    bottom: 0px;
+}
+#tnt{
+    width: 41px;
+    height: 41px;
+    bottom: 70px;
+    right: 35px;
+    background-image: url(./img/tnt.png);
+    position: absolute;
+	transition:0.5s;
+}
+
+
+#mouseBox{
+    width: 30px;
+    height: 140px;
+    background-color: rgba(255,255,255,.5);
+    border-radius: 4px;
+    position: absolute;
+    left: 110px;
+    bottom: 180px;
+    display: none;
+}
+#boom{
+    width: 150px;
+    height: 150px;
+    background-image: url(./img/boom.gif);
+    background-size: contain;
+    position: absolute;
+    bottom: 20px;
+    right: -10px;
+    mix-blend-mode:screen;
+}
+
+
+#player.anim1{
+    animation: move1 1.8s ease-in-out forwards;
+}
+#player.anim2{
+    animation: move2 0.8s ease-in-out forwards;
+}
+#player.anim3{
+    animation: move3 1.1s ease-in-out forwards;
+}
+#player.refresh{
+    animation: none;
+}
+
+#win , #lose{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 9;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000062;
+}
+.stars{
+    width: 100%;
+    height: 130px;
+}
+.win-stars{
+    background: url("./img/stars.png") no-repeat 50% ;
+}
+.lose-stars{
+    background: url("./img/stars2.png") no-repeat 50% ;
+}
+.score-Mas{
+    margin-top: 20px;
+    font-size: 70px;
+    color: #fff;
+}
+.score-bottom{
+    display: flex;
+    padding-top:50px;
+    padding-bottom: 150px;
+    width: 50%;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+}
+.refresh{
+    cursor: pointer;
+    width: 140px;
+    height: 140px;
+    background: url("./img/refresh-btn.png") no-repeat;
+	background-size: contain;
+}
+.exitBtn{
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    background: url("./img/exit.png") no-repeat;
+	background-size: contain;
+}
+@keyframes move1{
+    0%{
+		transform:translate(0,0);
+    }
+    100%{
+		transform:translate(1300px,-250px);		
+    }
+}
+
+@keyframes move2{
+    0%{
+		transform:translate(0,0);
+    }
+    100%{
+		transform:translate(620px,65px);		
+    }
+}
+@keyframes move3{
+    0%{
+		transform:translate(0,0);
+    }
+    80%{
+		transform:translate(670px,-30px);
+    }
+    100%{
+		transform:translate(640px,60px);
+    }
+}
+
+/*   destroy 1   */
+
+
+.destroy1 #i1{	opacity:0;transition-delay:0s}
+.destroy1 #i2{	opacity:0;transition-delay:0s}
+.destroy1 #boom{	opacity:0;transition-delay:0s}
+.destroy1 #w1{	transform:rotate(90deg);transition-delay:0s}
+.destroy1 #w2{	transform:rotate(30deg);transition-delay:0s}
+.destroy1 #w3{	transform:translate(10px,50px) rotate(-65deg) ;transition-delay:0s}
+.destroy1 #tnt{	transform:translate(150px,100px) rotate(640deg) ;transition:0.8s 0s}
+
+.destroy2 #i1{	opacity:0;transition-delay:0s}
+.destroy2 #i2{	opacity:0;transition-delay:0s}
+.destroy2 #boom{	opacity:0;transition-delay:0s}
+.destroy2 #w1{	transform:rotate(-90deg);transition-delay:0s}
+.destroy2 #w2{	transform:rotate(85deg);transition-delay:0s}
+.destroy2 #w3{	transform:translate(5px,50px) rotate(80deg) ;transition-delay:0s}
+.destroy2 #tnt{	display:none;}
+.destroy2 #enemy{ animation: pigOut 2.5s ease-in-out forwards;}
+
+@keyframes pigOut{
+    0%{
+		transform:translate(0,0);
+    }
+    50%{
+		transform:translate(50px,-500px) rotate(700deg);
+    }
+    100%{
+		transform:translate(60px,50px) rotate(1400deg);
+		
+    }	
+
+}
+.hide{
+	display:none !important ;	
+}
+.show{
+	display:block !important;	
+}
+.show-flex{
+	display:flex;	
+}

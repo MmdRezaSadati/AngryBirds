@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="all.css">
+	<title></title>
+<head>
+<body>
+<audio src="audio/start song.mp3" id="gameMusic"></audio>
+
+<audio src="audio/level clear military a1.mp3" id="auLevel"></audio>
+<audio src="audio/level failed piglets a1.mp3" id="auPigs"></audio>
+<audio src="./audio/menu select.wav" id="auSelect"></audio>
+
+<audio src="./audio/bird 04 select.wav" id="auBirdSel"></audio>	
+<audio src="./audio/slingshot streched.wav" id="auSling"></audio>
+<audio src="./audio/bird 04 flying.wav" id="auFly"></audio>
+
+<audio src="./audio/bye3.m4a" id="auBye"></audio>
+<audio src="./audio/menu select.wav" id="auMenuSelect"></audio>
+<audio src="./audio/bird destroyed.wav" id="auBirdDes"></audio>
+<audio src="./audio/ice light collision a8.wav" id="auIce"></audio>
+<audio src="./audio/rock collision a2.wav" id="auRock"></audio>	
+<audio src="./audio/tnt box explodes.wav" id="auTnt"></audio>
+<audio src="./audio/star_collect.wav" id="auStarsCollect"></audio>
+
+
+<div id="gameScene">
+	<video src="video/vid2.mp4" id="introVid"></video>
+	<div class="cloud1"></div>
+	<div class="cloud2"></div>
+	<div id="cactus"></div>
+	<div id="gameMenu">
+		<div class="groundMoving"></div>
+		<div id="playBtn"></div>
+	</div>
+	<div id="gamePlay" class="hide">
+		<div class="ground"></div>
+		<div id="player" class=""></div>
+		<div id="mouseBox"></div>
+		<div id="enemyBox" class="">
+			<div id="enemy"></div>
+			<div id="w1" class="wood"></div>
+			<div id="w2" class="wood"></div>
+			<div id="w3" class="wood"></div>
+			<div id="i1" class="ice"></div>
+			<div id="i2" class="ice"></div>
+			<div id="tnt"></div>
+			<div id="boom"></div>
+			<div id="bomb"></div>
+		</div>
+	</div>
+	<div id="win" class="hide">
+		<div class="win-stars stars"></div>
+		<div class="score-Mas"> W i n n e r ! </div>
+		<div class="score-bottom">
+			<div class="exitBtn" onclick="refresh()"></div>
+			<div class="refresh" onclick="refresh()"></div>
+		</div>
+	</div>
+	<div id="lose" class="hide">
+		<div class="lose-stars stars"></div>
+		<div class="score-Mas"> Your loser</div>
+		<div class="score-bottom">
+			<div class="exitBtn" onclick="refresh()"></div>
+			<div class="refresh" onclick="refresh()"></div>
+		</div>
+	</div>
+</div>
+
+<script src="game 02.js">  </script>
+</body>
+</html>
